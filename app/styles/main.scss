@@ -1,0 +1,72 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+$font-digital7-italic: "../fonts/digital-7 (italic).ttf";
+$font-digital7: "../fonts/digital-7.ttf";
+
+@font-face {
+  font-family: 'Digital7';
+  src: url($font-digital7-italic) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Digital7';
+  src: url($font-digital7) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  background-color: black;
+}
+
+.container-fluid{
+  padding: 0;
+}
+
+.jumbotron{
+  font-family: 'Digital7';
+  font-style: italic;
+  background-color: inherit;
+  color: red;
+  margin-left: 10%;
+  margin-top: 20%;
+  padding: 0;
+  h1{
+    font-size: 40vh;
+    line-height: 0.8em;
+    margin: 0;
+    .milli{
+      font-size: 0.3em;
+    }
+  }
+
+  .blue{
+    color: blue;
+  }
+}
+.jumbotron.newyear{
+  margin-top: 3%;
+  margin-left: auto;
+  text-align: center;
+  .newyear-text h1{
+    font-family: 'Verdana';
+    line-height: 1em;
+    font-size: 30vh;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: 60;//infinite
+  }
+}
+
+
+@keyframes blink {
+0%{ background-color: blue;}
+50%{ background-color: white;}
+100%{ background-color: blue;}
+}
+
+

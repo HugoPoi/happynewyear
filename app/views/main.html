@@ -1,0 +1,11 @@
+<div class="jumbotron" ng-class="(duration.asMilliseconds() > 0)? 'counter' : 'newyear' " ng-click="configpanel()">
+  <h1 ng-show="duration.asMilliseconds() > 0"><span class="blue">{{ (duration.days()*24 + duration.hours()) | numberFixedLen:2}}:{{duration.minutes() | numberFixedLen:2}}:</span><span>{{duration.seconds() | numberFixedLen:2}}</span><span class="milli">{{duration.milliseconds() | numberFixedLen:3}}</span></h1>
+
+  <div ng-show="duration.asMilliseconds() < 0" class="newyear-text">
+  <h1>Bonne</h1>
+  <h1>année 2015</h1>
+  </div>
+</div>
+<form ng-show="config.showpanel">
+  <input type="text" ng-model="config.target">
+</form>
