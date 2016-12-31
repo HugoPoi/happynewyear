@@ -1,11 +1,13 @@
-<div class="jumbotron" ng-class="(duration.asMilliseconds() > 0)? 'counter' : 'newyear' " ng-click="configpanel()">
-  <h1 ng-show="duration.asMilliseconds() > 0"><span class="blue">{{ (duration.days()*24 + duration.hours()) | numberFixedLen:2}}:{{duration.minutes() | numberFixedLen:2}}:</span><span>{{duration.seconds() | numberFixedLen:2}}</span><span class="milli">{{duration.milliseconds() | numberFixedLen:3}}</span></h1>
-
-  <div ng-show="duration.asMilliseconds() < 0" class="newyear-text">
-  <h1>Bonne</h1>
-  <h1>année 2015</h1>
+<div class="container-fluid" ng-style="{ 'background-color': config.background }">
+  <form ng-show="config.showpanel">
+    <select ng-options="font for font in fonts" ng-model="config.currentFont"></select>
+    <input type="text" ng-model="config.target">
+    <input type="color" ng-model="config.background">
+    <input type="color" ng-model="config.color1">
+    <input type="color" ng-model="config.color2">
+    <div style="color: white">{{ config | json }}</div>
+  </form>
+  <div ng-style="{ 'font-family' : config.currentFont }" class="jumbotron countdown" ng-click="configpanel()">
+    <h1><span ng-style="{ 'color': config.color1 }" class="blue">{{ (duration.days()*24 + duration.hours()) | numberFixedLen:2}}:{{duration.minutes() | numberFixedLen:2}}:</span><span>{{duration.seconds() | numberFixedLen:2}}</span><span ng-style="{ 'color': config.color2 }" class="milli">{{duration.milliseconds() | numberFixedLen:3}}</span></h1>
   </div>
 </div>
-<form ng-show="config.showpanel">
-  <input type="text" ng-model="config.target">
-</form>

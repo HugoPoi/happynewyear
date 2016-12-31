@@ -9,7 +9,7 @@
  * Main module of the application.
  */
 angular
-  .module('newyearApp', [
+  .module('HappyNewYearCountdown', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -23,9 +23,9 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+      .when('/newyear', {
+        templateUrl: 'views/newyear.html',
+        controller: 'NewYearCtrl'
       })
       .otherwise({
         redirectTo: '/'
